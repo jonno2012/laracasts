@@ -1,0 +1,9 @@
+php artisan migrate:fresh --seed
+php artisan make:model -mfs
+php artisan make:model Post -mf - make model with migration and factory
+php artisan vendor:publish publishes laravel templates packages to your own views directory so you can override them
+
+
+
+
+App\Model\Post::factory(10)->create(['category_id'=>1]); // create 10 posts using factory.

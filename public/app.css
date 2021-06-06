@@ -1,0 +1,20 @@
+body {
+  background: white;
+  color:#222;
+  max-width: 55%;
+  margin: auto;
+  display: block;
+}
+
+article + article {
+  margin-top: 2em;
+
+}
+
+article ~ article {
+    border-top: 1px solid #ccc;
+}
+
+article {
+  padding: 0em;
+}

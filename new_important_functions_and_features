@@ -1,0 +1,7 @@
+base_path() - project root
+resource_path() - resource dir
+return cache()->remember("posts.{$slug}", 3600, fn() => file_get_contents($path)); - caching
+Illuminate\Support\Facades\FileFile::files(resource_path("posts/"))
+collect(File::files(resource_path('posts'))) - creates laravel collection from array
+@dd($loop)
+$users->pluck('name') - returns only names of users. used on a collection
