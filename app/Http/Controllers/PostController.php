@@ -12,7 +12,7 @@ class PostController extends Controller
     {
         $posts = Post::latest()->filter(request(['search', 'category', 'author']))
                                 ->with('category', 'author')
-                                ->paginate(2)->withQueryString();
+                                ->paginate(4)->withQueryString();
 //                                ->simplePaginate(2);
 //        dd($posts->get());
 //        $posts = Post::latest('published_at')->with('category', 'author');

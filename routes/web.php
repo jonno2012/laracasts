@@ -5,6 +5,8 @@ use App\Models\Post;
 use App\Models\Category;
 use \App\Models\User;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\DibbleController;
 use Spatie\YamlFrontMatter\YamlFrontMatter;
 use Illuminate\Support\Facades\File;
 
@@ -45,3 +47,9 @@ Route::get('/author/{author:username}', function(User $author) {
         'posts' => $author->posts->load(['category', 'author'])
     ]);
 });
+
+Route::get('/dibble', [DibbleController::class, 'index']);
+
+
+Route::post('/register', [RegisterController::class, 'store']);
+Route::get('/register', [RegisterController::class, 'create']);

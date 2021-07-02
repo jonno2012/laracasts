@@ -2,8 +2,11 @@ php artisan migrate:fresh --seed
 php artisan make:model -mfs
 php artisan make:model Post -mf - make model with migration and factory
 php artisan vendor:publish publishes laravel templates packages to your own views directory so you can override them
+php artisan make:controller UserController --resource // make crud controller
 
-
-
+php artisan migrate:reset - rolls back all migrations
+php artisan migrate:rollback - rolls back the last step
+php artisan migrate:rollback --step=2 rolls back to the migration before the last one etc.
+php artisan migrate:refresh --seed // Refresh the database and run all database seeds...
 
 App\Model\Post::factory(10)->create(['category_id'=>1]); // create 10 posts using factory.

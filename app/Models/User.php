@@ -20,6 +20,8 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'username',
+        'email_verified_at'
     ];
 
     /**
@@ -44,5 +46,22 @@ class User extends Authenticatable
     public function posts(): object
     {
         return $this->hasMany(Post::class);
+    }
+
+    /**
+     * setter mutator
+     * @param $password
+     */
+    public function setPasswordAttribute($password)
+    {
+        $this->attributes['password'] = bcrypt($password);
+    }
+
+    /**
+     * getter mutator
+     */
+    public function getUsernameAttribute($username)
+    {
+        return ucfirst($username);
     }
 }

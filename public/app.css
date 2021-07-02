@@ -18,3 +18,7 @@ article ~ article {
 article {
   padding: 0em;
 }
+
+label + input {
+    margin-top: 10px;
+}
